@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>SwingMan Video Editing</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy"
+    crossorigin="anonymous">
+  <style>
+    #pagewrap {
+      width: 640px;
+      margin: 0 auto;
+    }
+
+    .controlwrap {
+      text-align: center;
+    }
+
+    .current {
+      font-weight: bold;
+    }
+
+    .modal-dialog {
+      max-width: 700px !important;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="pagewrap">
+    <div id="videowrap">
+      <video id="video" width="640" height="360" controls autoplay>
+      </video>
+    </div>
+    <div class="controlwrap">
+      <button id="start">start (S)</button>
+      <button id="end">end (E)</button>
+      <button id="hide">hide (H)</button>
+      <button id="unhide">unhide</button>
+    </div>
+    <div>
+      <table id="table" width="100%">
+        <tbody>
+        </tbody>
+      </table>
+    </div>
+    <div class="controlwrap">
+      <button id="submit">Generate</button>
+      <select name="mvpteam"><option>home</option><option>away</option></select><input type="text" name="mvp"><button id="submit_mvp">Generate MVP</button>
+    </div>
+  </div>
+  <div class="modal" tabindex="-1" role="dialog" id="match-selection" data-backdrop="static">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Select Match</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          </button>
+        </div>
+        <div class="modal-body">
+          <select id="matches">
+            
+          </select>
+        </div>
+        <div class="modal-footer">
+          <button type="button" id="choose-match" class="btn btn-primary">Select</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/highlighter.js"></script>
+</body>
+
+</html>
